@@ -49,4 +49,14 @@ public class WebController {
 
         return "page2";
     }
+
+    @GetMapping("/earthquakes/search")
+    public String getEarthquakesSearch(Model model, OAuth2AuthenticationToken oAuth2AuthenticationToken,
+            EqSearch eqSearch) {
+        EarthquakeQueryService e = new EarthquakeQueryService();
+        model.addAttribute("eqSearch", eqSearch);
+        String json = e.getJSON(eqSearch.getDistance(), eqSearch.getMinmag());
+        model.addAttribute("json", json);
+        return "earthquakes/search";
+    }
 }
