@@ -60,9 +60,11 @@
     <!-- (23) <dependencies/> -->
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+         <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>2.22.0</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- jpa, crud repository -->
@@ -84,14 +86,7 @@
             <version>2.3.1</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>2.22.0</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
+         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
             <version>2.10.0</version>
@@ -102,11 +97,16 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.10.0</version>
         </dependency>
-        
+
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <dependency>
@@ -227,7 +227,7 @@
                     <archive>
                         <manifest>
                             <!-- full package name of class with the main you want to run -->
-                <mainClass>hello.Application</mainClass>
+			    <mainClass>hello.Application</mainClass>
 
                         </manifest>
                     </archive>
@@ -282,7 +282,8 @@
         </plugins>
     </reporting>
     <!-- (28) <profiles/> -->
-    <profiles>
+
+     <profiles>
         <profile>
             <id>localhost</id>
             <build>

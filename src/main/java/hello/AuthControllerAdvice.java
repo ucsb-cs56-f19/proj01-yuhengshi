@@ -1,21 +1,20 @@
 package hello;
 
+import hello.repositories.UserRepository;
+import hello.entities.AppUser;
+import java.util.List;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
-import hello.repositories.UserRepository;
-import hello.entities.AppUser;
-import java.util.List;
-
 @ControllerAdvice
 public class AuthControllerAdvice {
 
     @Autowired   
     private UserRepository userRepository;
-
+    
     @Autowired   
     private MembershipService membershipService;
 
@@ -61,7 +60,6 @@ public class AuthControllerAdvice {
     public String getRole(OAuth2AuthenticationToken token){
         return membershipService.role(token);
     }
-
     private String token2login(OAuth2AuthenticationToken token) {
         return token.getPrincipal().getAttributes().get("login").toString();
     }
