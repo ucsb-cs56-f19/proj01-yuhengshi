@@ -10,14 +10,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import java.util.Map;
 import java.util.HashMap;
-
+import earthquakes.services.LocationQueryService;
 import earthquakes.services.EarthquakeQueryService;
 import earthquakes.geojson.FeatureCollection;
 import earthquakes.searches.LocSearch;
 import earthquakes.searches.EqSearch;
 import java.util.List;
 import com.nimbusds.oauth2.sdk.client.ClientReadRequest;
-
+import earthquakes.osm.Place;
 @Controller
 public class LocationsController {
     @Autowired
