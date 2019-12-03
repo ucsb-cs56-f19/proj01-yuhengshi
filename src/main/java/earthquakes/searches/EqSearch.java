@@ -8,28 +8,7 @@ public class EqSearch{
 	private double lon;
 	private String location;
 
-
 	public EqSearch(){};
-
-	public void setDistance(int d){
-		distance = d;
-	}
-
-	public void setMinmag(int mag){
-		minmag = mag;
-	}
-
-	public void setLat(double l){
-		lat = l;
-	}
-	
-	public void setLon(double l){
-		lon = l;
-	}
-
-	public void setLocation(String loc){
-		location = loc;
-	}
 
 	public int getDistance(){
 		return this.distance;
@@ -46,8 +25,28 @@ public class EqSearch{
 	public double getLon(){
 		return this.lon;
 	}
-	
+
 	public String getLocation(){
 		return this.location;
+	}
+
+	public void setDistance(int distance){
+		this.distance = distance;
+	}
+
+	public void setMinmag(int minmag){
+		this.minmag = minmag;
+	}
+
+	public void setLat(double lat){
+		this.lat = lat;
+	}
+
+	public void setLon(double lon){
+		this.lon = lon;
+	}
+
+	public void setLocation(String location){
+		this.location = location;
 	}
 }
