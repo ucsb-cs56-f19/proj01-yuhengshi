@@ -1,4 +1,6 @@
-package hello;
+package hello.services;
+
+import hello.services.EarthquakeQueryService;
 
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 

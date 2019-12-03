@@ -1,5 +1,7 @@
 
-package hello;
+package hello.services;
+
+import hello.services.EarthquakeQueryService;
 
 
 import java.util.Arrays;

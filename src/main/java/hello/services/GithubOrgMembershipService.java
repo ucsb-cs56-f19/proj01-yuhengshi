@@ -1,4 +1,6 @@
-package hello;
+package hello.services;
+
+import hello.services.EarthquakeQueryService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

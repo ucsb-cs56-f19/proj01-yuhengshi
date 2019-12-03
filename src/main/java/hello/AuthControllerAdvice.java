@@ -1,5 +1,7 @@
 package hello;
 
+import hello.services.MembershipService;
+
 import hello.repositories.UserRepository;
 import hello.entities.AppUser;
 import java.util.List;
