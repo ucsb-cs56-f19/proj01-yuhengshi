@@ -19,7 +19,7 @@ import java.util.HashMap;
 import com.nimbusds.oauth2.sdk.client.ClientReadRequest;
 
 @Controller
-public class EarthquakesControlller {
+public class EarthquakesController {
 
     @Autowired
     private ClientRegistrationRepository clientRegistrationRepository;
