@@ -3,6 +3,7 @@ Added following links to lab07:
 Documentation : https://ucsb-cs56-f19.github.io/lab07-yuhengshi/
 Heroku :        https://cs56-f19-lab07-yuhengshi.herokuapp.com
 Github :        https://github.com/ucsb-cs56-f19/lab07-yuhengshi
+Travis-CI:      https://travis-ci.org/ucsb-cs56-f19/proj01-yuhengshi
 
 
 A simple Spring Boot webapp using:
