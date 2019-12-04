@@ -1,4 +1,5 @@
 package earthquakes.controllers;
+
 import earthquakes.osm.Place;
 
 import org.springframework.beans.factory.annotation.Autowired;
