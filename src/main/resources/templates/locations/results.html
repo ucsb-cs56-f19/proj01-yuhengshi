@@ -1,54 +1,63 @@
 <!DOCTYPE HTML>
- <html xmlns:th="http://www.thymeleaf.org" lang="en"> 
-   <head>
-     <title>Location Search Results</title>
-     <div th:replace="bootstrap/bootstrap_head.html"></div>
-   </head>
-   <body>
-     <div class="container">
-       <div th:replace="bootstrap/bootstrap_nav_header.html"></div>
+<html xmlns:th="http://www.thymeleaf.org" lang="en"> 
+  <head>
+    <title>Locations Search Results</title>
+    <div th:replace="bootstrap/bootstrap_head.html"></div>
+  </head>
+  <body>
+    <div class="container">
+      <div th:replace="bootstrap/bootstrap_nav_header.html"></div>
 
-       <h1>Location Search Results</h1>
-       <table class="table">
-	 <thead>
-         <tr>
-             <th>Location</th>
-         </tr>
-	 </thead>
-	 <tbody>
-	   <tr>
-	     <td th:text="${locSearch.location}"></td>
-	   </tr>
-	 </tbody>
-	 
-     </table>
+      <h1>Locations Search Results</h1>
 
-     <h2>Location Search Results</h2>
-       <table class="table">
-         <thead>
-           <tr>
-             <th>Place ID</th>
-             <th>Latitude</th>
-             <th>Longitude</th>
-             <th>Display Name</th>
-             <th>Type</th>
-           </tr>
-         </thead>
-         <tbody>
-           <tr th:each="p: ${places}"> 
+        <table class="table">
+            <tr>
+                <th>Location</th>
+            </tr>
+            <tr>
+                <td th:text="${locSearch.location}"></td>
+            </tr>
+        </table>
 
-             <td th:text="${p.place_id}"></td>
-             <td th:text="${p.lat}"></td>
-             <td th:text="${p.lon}"></td>
-             <td th:text="${p.display_name}"></td>
-             <td th:text="${p.type}"></td>
-           </tr>
-         </tbody>
-       </table>
+      <h2>Location Search Results</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Place Id</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>Display Name</th>
+                    <th>Type</th>
+                    <th>Get Earthquakes</th>
+                    <th>Add to favorites</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="f: ${place}"> 
+                    <td th:text="${f.place_id}"></td>
+                    <td th:text="${f.lat}"></td>
+                    <td th:text="${f.lon}"></td>
+                    <td th:text="${f.display_name}"></td>
+                    <td th:text="${f.type}"></td>
+                    <td><a th:href="@{/earthquakes/search/(lat=${f.lat},lon=${f.lon},location=${f.display_name})}">Get Earthquakes</a> </td>
+                    <td>
+                        <form action="#" th:action="@{/locations/add}"  th:object="${location}"  method="post">
+                            <input type="hidden" name="placeId" th:value="${f.place_id}" value=""/>
+                            <input type="hidden" name="name" th:value="${f.display_name}" value=""/>
+                            <input type="hidden" name="latitude" th:value="${f.lat}" value=""/>
+                            <input type="hidden" name="longitude" th:value="${f.lon}" value=""/>
+                            <input type="submit" class="btn btn-primary" value="Add" />
+                        </form>
+                    </td>
+                    
+                </tr>
+                
+            </tbody>
+        </table>
 
-
-       <div th:replace="bootstrap/bootstrap_footer.html"></div>
-     </div>
-     <div th:replace="bootstrap/bootstrap_scripts.html"></div>
-   </body>
- </html>
+      
+      <div th:replace="bootstrap/bootstrap_footer.html"></div>
+    </div>
+    <div th:replace="bootstrap/bootstrap_scripts.html"></div>
+  </body>
+</html>
